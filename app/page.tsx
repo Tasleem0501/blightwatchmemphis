@@ -16,6 +16,7 @@ import AdminPanel from "@/components/admin-panel"
 import RewardsLeaderboard from "@/components/rewards-leaderboard"
 import AchievementsShowcase from "@/components/achievements-showcase"
 import Login from "@/components/login"
+import SimpleAvatar from "@/components/simple-avatar"
 
 export default function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -31,6 +32,8 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background">
+      <SimpleAvatar />
+
       <Header
         isLoggedIn={isLoggedIn}
         setIsLoggedIn={setIsLoggedIn}
