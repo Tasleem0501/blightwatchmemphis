@@ -10,12 +10,14 @@ export default function FeatureShowcase() {
       color: "from-primary/10 to-transparent",
     },
     {
-      icon: "🗺️",
-      title: "Community Map",
-      description: "See reported blight locations and contribute to a citywide blight index.",
-      color: "from-accent/10 to-transparent",
-      onClick: () => window.open("https://felt.com/map/CivicBloom-9BQzjRZ4ZTWGTZbYm2Rad0B?loc=35.11639%2C-89.96721%2C14.66z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1", "_blank")
-    },
+  icon: "🗺️",
+  title: "Community Map",
+  description: "See reported blight locations and contribute to a citywide blight index.",
+  color: "from-accent/10 to-transparent",
+  onClick: () => window.open("https://felt.com/map/Blight-Watch-Z9A9AbN6SOTIa6Xdwym5g9C7A?share=1&loc=35.11477,-89.97298,14.23z", "_blank"),
+  embed: true,
+  embedSrc: "https://felt.com/embed/map/Blight-Watch-Z9A9AbN6SOTIa6Xdwym5g9C7A?loc=35.11118%2C-89.97476%2C12.71z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+}
     {
       icon: "🎯",
       title: "Businesses against Blight",

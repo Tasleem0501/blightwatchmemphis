@@ -73,7 +73,7 @@ export default function BlightMap({ reports }: { reports: BlightReport[] }) {
           const x = neighborhood.x * width
           const y = neighborhood.y * height
 
-          let color = "#4ade80"
+          let color = "#ef4444"
           if (count >= 5)
             color = "#ef4444"
           else if (count >= 2) color = "#f59e0b"
