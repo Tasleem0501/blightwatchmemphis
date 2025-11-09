@@ -187,11 +187,11 @@ export default function RewardsLeaderboard({ setCurrentPage }: any) {
                         {volunteer.level}
                       </span>
                     </td>
-                    <td className="px-6 py-4 text-sm">
+                    {/* <td className="px-6 py-4 text-sm">
                       <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-bold">
                         {volunteer.achievements} Badges
                       </span>
-                    </td>
+                    </td> */}
                   </tr>
                 ))}
               </tbody>

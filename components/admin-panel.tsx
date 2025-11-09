@@ -137,7 +137,7 @@ export default function AdminPanel({ setCurrentPage, setIsLoggedIn }: any) {
               onClick={() => setCurrentPage("home")}
               className="w-full mt-4 px-6 py-3 bg-muted text-muted-foreground rounded-lg hover:opacity-80 transition-opacity font-semibold"
             >
-              Back Home
+             ← Back to Home
             </button>
           </div>
         </div>
@@ -156,6 +156,13 @@ export default function AdminPanel({ setCurrentPage, setIsLoggedIn }: any) {
       <div className="max-w-6xl mx-auto">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-3xl font-bold text-foreground">Admin Dashboard</h1>
+          <div className="flex gap-2">
+            <button
+              onClick={() => setCurrentPage("home")}
+              className="px-4 py-2 bg-secondary text-card-foreground rounded-lg hover:opacity-90 transition-opacity font-semibold"
+            >
+              ← Back
+            </button>
           <button
             onClick={() => {
               localStorage.removeItem("admin_authenticated")
@@ -166,6 +173,7 @@ export default function AdminPanel({ setCurrentPage, setIsLoggedIn }: any) {
           >
             Logout Admin
           </button>
+          </div>
         </div>
 
         {/* Tabs */}
@@ -182,6 +190,7 @@ export default function AdminPanel({ setCurrentPage, setIsLoggedIn }: any) {
             >
               {tab.charAt(0).toUpperCase() + tab.slice(1)}
             </button>
+
           ))}
         </div>
 

@@ -92,6 +92,12 @@ export default function NotificationsCenter({ setCurrentPage }: any) {
   return (
     <main className="container mx-auto px-4 py-12">
       <div className="max-w-3xl mx-auto">
+          <button
+          onClick={() => setCurrentPage("dashboard")}
+          className="mb-6 text-primary hover:opacity-80 font-semibold flex items-center gap-2"
+        >
+          ← Back to Dashboard
+        </button>
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-3xl font-bold text-foreground">Notifications</h1>
           {unreadCount > 0 && (

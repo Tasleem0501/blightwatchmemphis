@@ -61,6 +61,12 @@ export default function ReportBlight({ setCurrentPage }: any) {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-primary/5 to-accent/5 px-4 py-12">
+       <button
+        onClick={() => setCurrentPage("dashboard")}
+        className="mb-6 text-primary hover:opacity-80 font-semibold flex items-center gap-2 max-w-2xl mx-auto"
+      >
+        ← Back to Dashboard
+      </button>
       <div className="max-w-2xl mx-auto bg-card border-2 border-border rounded-lg p-8 shadow-md">
         <h1 className="text-3xl font-bold text-card-foreground mb-2">Report Blight</h1>
         <p className="text-muted-foreground mb-8">

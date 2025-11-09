@@ -4,7 +4,7 @@ export default function FeatureShowcase() {
   const features = [
     {
       icon: "📋",
-      title: "Easy Reporting",
+      title: "Reporting to City",
       link: "https://311.memphistn.gov/public",
       description: "Submit blight reports in seconds with photos, descriptions, and location data.",
       color: "from-primary/10 to-transparent",
@@ -32,6 +32,7 @@ export default function FeatureShowcase() {
     {
       icon: "🏆",
       title: "Cleanup fun & Earn",
+       link: "https://www.meetup.com/find/us--tn--memphis/",
       description: "Contribute to clean up days in your community.",
       color: "from-primary/10 to-transparent",
     },

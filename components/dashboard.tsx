@@ -26,6 +26,12 @@ export default function Dashboard({ setCurrentPage, setIsLoggedIn }: any) {
 
   return (
     <main className="container mx-auto px-4 py-12">
+      <button
+        onClick={() => setCurrentPage("home")}
+        className="mb-6 text-primary hover:opacity-80 font-semibold flex items-center gap-2"
+      >
+        ← Back to Home
+      </button>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Stats */}
         <div className="lg:col-span-1">

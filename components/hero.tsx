@@ -23,11 +23,11 @@ export default function Hero({ setCurrentPage }: any) {
             Get Started Today
           </button>
           <button
-            onClick={() => setCurrentPage("dashboard")}
-            className="px-8 py-4 bg-white text-primary rounded-lg hover:bg-white/90 transition-colors font-bold text-lg shadow-lg"
-          >
-            View Community Reports
-          </button>
+  onClick={() => window.open("https://311.memphistn.gov/portal/apps/dashboards/36ec917084f64ccbbd527c623531845e", "_blank")}
+  className="px-8 py-4 bg-white text-primary rounded-lg hover:bg-white/90 transition-colors font-bold text-lg shadow-lg"
+>
+  View Community Reports
+</button>
         </div>
       </div>
     </section>

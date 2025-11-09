@@ -24,9 +24,10 @@ export default function VolunteerRegistration({ setCurrentPage, setIsLoggedIn }:
     "Germantown",
     "East Memphis",
     "Raleigh",
+    "Other area please specify"
   ]
 
-  const interests = ["Reporting Blight", "Cleanup Events", "Community Organizing", "Photography", "Data Analysis"]
+  const interests = ["Reporting Blight", "Cleanup Events", "Community Organizing", "Photography", "Others"]
 
   const handleInterestToggle = (interest: string) => {
     setFormData((prev) => ({
@@ -66,10 +67,38 @@ export default function VolunteerRegistration({ setCurrentPage, setIsLoggedIn }:
     setIsLoggedIn(true)
     setCurrentPage("dashboard")
   }
+const handleGuestLogin = () => {
+    const guestId = `guest_${Date.now()}`
+    const guestData = {
+      id: guestId,
+      name: "Guest User",
+      email: `guest_${Date.now()}@blightwatch.local`,
+      neighborhood: "Not specified",
+      phone: "",
+      interests: ["Reporting Blight"],
+      joinDate: new Date().toLocaleDateString(),
+      totalReports: 0,
+      totalPoints: 0,
+      level: "Newcomer",
+      isGuest: true,
+    }
 
+    localStorage.setItem("blightwatch_user", JSON.stringify(guestData))
+    localStorage.setItem(`profile_${guestId}`, JSON.stringify(guestData))
+
+    setIsLoggedIn(true)
+    setCurrentPage("dashboard")
+  }
+  
   return (
     <main className="container mx-auto px-4 py-12">
       <div className="max-w-2xl mx-auto">
+         <button
+          onClick={() => setCurrentPage("home")}
+          className="mb-6 text-primary hover:opacity-80 font-semibold flex items-center gap-2"
+        >
+          ← Back to Home
+        </button>
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-foreground mb-2">Join BlightWatch</h1>
           <p className="text-muted-foreground">Step {step} of 3 - Let's get you started</p>
@@ -96,12 +125,14 @@ export default function VolunteerRegistration({ setCurrentPage, setIsLoggedIn }:
           {step === 1 && (
             <div className="space-y-6">
               <div>
-                <label className="block text-sm font-semibold text-card-foreground mb-2">Full Name *</label>
+                <label className="block text-sm font-semibold text-card-foreground mb-2">Full Name 
+                  (Optional)
+                </label>
                 <input
                   type="text"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  placeholder="John Doe"
+                  placeholder="John Doe/optional"
                   className="w-full px-4 py-2 bg-input border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                 />
               </div>
@@ -222,6 +253,12 @@ export default function VolunteerRegistration({ setCurrentPage, setIsLoggedIn }:
             Sign in
           </button>
         </p>
+         <button
+            onClick={handleGuestLogin}
+            className="px-4 py-2 bg-muted text-muted-foreground rounded-lg hover:opacity-80 transition-opacity font-semibold text-sm"
+          >
+            Continue as Guest
+          </button>
       </div>
     </main>
   )
