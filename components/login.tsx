@@ -21,9 +21,7 @@ export default function Login({ setCurrentPage, setIsLoggedIn }: any) {
 
     setIsLoading(true)
 
-    // Simulate API call
     setTimeout(() => {
-      // Check if user exists in localStorage
       let foundUser = null
       for (let i = 0; i < localStorage.length; i++) {
         const key = localStorage.key(i)
@@ -46,6 +44,18 @@ export default function Login({ setCurrentPage, setIsLoggedIn }: any) {
 
       setIsLoading(false)
     }, 500)
+  }
+
+  const handleGuestSignIn = () => {
+    const guestUser = {
+      id: `guest_${Date.now()}`,
+      email: `guest_${Date.now()}@blightwatch.local`,
+      name: "Guest User",
+      isGuest: true,
+    }
+    localStorage.setItem("blightwatch_user", JSON.stringify(guestUser))
+    setIsLoggedIn(true)
+    setCurrentPage("dashboard")
   }
 
   return (
@@ -104,6 +114,22 @@ export default function Login({ setCurrentPage, setIsLoggedIn }: any) {
             </button>
           </div>
         </form>
+
+        <div className="mt-4 relative">
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t border-border"></div>
+          </div>
+          <div className="relative flex justify-center text-sm">
+            <span className="px-2 bg-gradient-to-br from-primary/5 to-accent/5 text-muted-foreground">Or</span>
+          </div>
+        </div>
+
+        <button
+          onClick={handleGuestSignIn}
+          className="w-full mt-4 px-6 py-3 bg-secondary text-secondary-foreground rounded-lg hover:opacity-80 transition-opacity font-semibold border border-border"
+        >
+          Continue as Guest
+        </button>
 
         <div className="mt-6 p-4 bg-secondary/50 border border-secondary rounded-lg text-sm text-muted-foreground text-center">
           <p className="font-medium text-card-foreground mb-1">Demo Credentials</p>

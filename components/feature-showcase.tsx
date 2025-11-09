@@ -14,6 +14,7 @@ export default function FeatureShowcase() {
       title: "Community Map",
       description: "See reported blight locations and contribute to a citywide blight index.",
       color: "from-accent/10 to-transparent",
+      onClick: () => window.open("https://felt.com/map/CivicBloom-9BQzjRZ4ZTWGTZbYm2Rad0B?loc=35.11639%2C-89.96721%2C14.66z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1", "_blank")
     },
     {
       icon: "🎯",
@@ -64,6 +65,13 @@ export default function FeatureShowcase() {
                   {feature.title}
                 </h3>
               </a>
+            ) : feature.onClick ? (
+              <h3 
+                onClick={feature.onClick}
+                className="text-lg font-bold text-card-foreground mb-3 hover:text-primary transition-colors cursor-pointer"
+              >
+                {feature.title}
+              </h3>
             ) : (
               <h3 className="text-lg font-bold text-card-foreground mb-3">{feature.title}</h3>
             )}
